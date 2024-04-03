@@ -1,4 +1,3 @@
-
 import telegram
 import asyncio
 
@@ -19,7 +18,7 @@ def handle_message(update, context):
     # Schedule the message to be deleted
     asyncio.create_task(delete_message(message.chat_id, message.message_id))
 
-if name == 'main':
+if __name__ == '__main__':
     updater = telegram.Updater(token=TELEGRAM_BOT_TOKEN, use_context=True)
     dispatcher = updater.dispatcher
 
@@ -28,3 +27,4 @@ if name == 'main':
 
     updater.start_polling()
     updater.idle()
+    
